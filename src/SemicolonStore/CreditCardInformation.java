@@ -9,7 +9,7 @@ public class CreditCardInformation {
     private String CreditCardNumber;
     private LocalDate CardExpirationYear;
     private LocalDate CardExpirationMonth;
-    private  String CardHolderName;
+    private String CardHolderName;
 
 
 }
