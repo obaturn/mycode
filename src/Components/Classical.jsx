@@ -1,0 +1,155 @@
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { FaEllipsisH, FaSearch, FaSpotify } from 'react-icons/fa';
+import pics from './Asserts/s3.PNG';
+
+const Classical = () => {
+  const [searchItem, setSearchItem] = useState('');
+  const [songs, setSongs] = useState([]);
+  const [backgroundImage, setBackgroundImage] = useState(pics);
+  const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
+  const navigate = useNavigate();
+
+  const typingTimeoutRef = useRef(null);
+
+  const handleSearch = useCallback(async (query, page = 1) => {
+    try {
+      const response = await axios.get(`http://127.0.0.1:5000/classical?page=${page}`);
+      const fetchedSongs = response.data;
+
+      setSongs((prevSongs) => (page === 1 ? fetchedSongs : [...prevSongs, ...fetchedSongs]));
+      setError(null);
+
+      if (fetchedSongs.length > 0 && fetchedSongs[0].artist_image_url) {
+        setBackgroundImage(fetchedSongs[0].artist_image_url);
+      }
+    } catch (err) {
+      console.error('Error fetching classical songs:', err);
+      setError('Could not fetch songs. Please try again.');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typingTimeoutRef.current) clearTimeout(typingTimeoutRef.current);
+
+    if (searchItem) {
+      typingTimeoutRef.current = setTimeout(() => {
+        handleSearch(searchItem, 1);
+      }, 500);
+    } else {
+      setSongs([]);
+    }
+
+    return () => clearTimeout(typingTimeoutRef.current);
+  }, [searchItem, handleSearch]);
+
+  const handleLoadMore = () => {
+    const nextPage = page + 1;
+    setPage(nextPage);
+    handleSearch(searchItem, nextPage);
+  };
+
+  const handleBack = () => {
+    navigate('/genres');
+  };
+
+  return (
+    <div
+      className="text-white min-h-screen"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+      }}
+    >
+      <div className="flex flex-col md:flex-row items-center justify-between p-4 max-w-4xl mx-auto">
+        {/* Left Section */}
+        <div className="flex items-center space-x-2 mb-4 md:mb-0">
+          <FaSpotify className="text-green-500 text-3xl md:text-4xl" />
+          <FaSearch className="text-gray-300 text-xl" />
+          <input
+            value={searchItem}
+            placeholder="Search for your favourite songs"
+            type="text"
+            onChange={(e) => setSearchItem(e.target.value)}
+            className="p-2 rounded bg-gray-800 text-white w-full md:max-w-sm placeholder-gray-400"
+          />
+        </div>
+
+        {/* Right Section */}
+        <div className="flex space-x-4">
+          <button
+            onClick={() => handleSearch(searchItem, 1)}
+            className="bg-black rounded px-4 py-2 text-sm md:text-base hover:bg-green-400"
+          >
+            Search Music
+          </button>
+          <button
+            onClick={handleBack}
+            className="bg-black rounded px-4 py-2 text-sm md:text-base hover:bg-green-400"
+          >
+            Back To Genre
+          </button>
+        </div>
+      </div>
+
+      <div className="bg-gray-900 bg-opacity-80 flex justify-center items-center py-10">
+        <div className="p-6 bg-gray-800 rounded-lg w-full max-w-2xl mx-auto text-white shadow-xl flex flex-col space-y-6">
+          {/* Header */}
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg md:text-xl font-bold">Your Best Classical Library</h2>
+            <div className="flex space-x-4">
+              <button className="text-sm text-white hover:text-gray-400">Recents</button>
+              <FaEllipsisH className="text-white cursor-pointer text-lg md:text-xl" />
+            </div>
+          </div>
+
+          {/* Error Message */}
+          {error && <p className="text-red-500">{error}</p>}
+
+          {/* Songs List */}
+          <div className="mt-4 space-y-3">
+            {songs.length > 0 ? (
+              songs.map((song, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-3 p-3 bg-gray-700 rounded-lg"
+                >
+                  <h3 className="text-base font-semibold">{song.name}</h3>
+                  <p className="text-sm text-gray-400">by {song.artist}</p>
+                  <a
+                    href={song.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-400 text-sm hover:underline"
+                  >
+                    Listen on Spotify
+                  </a>
+                </div>
+              ))
+            ) : (
+              <div className="text-center">
+                <p>Start by searching for classical music.</p>
+              </div>
+            )}
+          </div>
+
+          {/* Load More Button */}
+          {songs.length > 0 && (
+            <button
+              onClick={handleLoadMore}
+              className="bg-black text-white w-full py-2 rounded-lg hover:bg-green-400"
+            >
+              Load More
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Classical;
