@@ -12,7 +12,7 @@ const Classical = () => {
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
 
-  const typingTimeoutRef = useRef(null);
+  const typingTimeoutRef = useRef(null); 
 
   const handleSearch = useCallback(async (query, page = 1) => {
     try {
