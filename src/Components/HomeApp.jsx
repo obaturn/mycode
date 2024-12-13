@@ -1,20 +1,24 @@
 import React from 'react';
-import Background from './BackGround';
+import Background from './BackGround'
 
 function HomeApp() {
   return (
     <Background>
-      <div className="flex h-full justify-center items-center flex-col text-center text-white space-y-6">
-        <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 max-w-3xl">
+      <div className="flex h-full bg-cover bg-center justify-center items-center flex-col text-center text-white space-y-6 px-4 sm:px-6 md:px-8 lg:px-12">
+        {/* Main heading with responsive font size */}
+        <h1 className="text-1xl sm:text-3xl md:text-6xl lg:text-7xl font-bold ">
           Obaturn Spotify Music
         </h1>
-        <h2 className="text-lg font-medium max-w-2xl px-4 text-white">
-          Discover and enjoy the best music recommendations tailored just for you. Explore genres,
-          create playlists, and dive into the world of music.
-        </h2>
+        <p className="text-sm sm:text-lg md:text-xl lg:text-2xl max-w-xl">
+          Discover the world of music. Play, stream, and share your favorite songs anytime, anywhere.
+        </p>
+        <button className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition">
+          Start Listening
+        </button>
       </div>
     </Background>
   );
 }
 
 export default HomeApp;
+

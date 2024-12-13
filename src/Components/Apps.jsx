@@ -9,7 +9,6 @@ import RegisterPopUp from './RegisterPopUP';
 import TopBar from './TopBar';
 import Login from './Login';
 import { toggleRegisterPopUp } from './store';
-
 import Gospel from './Gospel';
 import HipHop from './HipHop';
 import Jazz from './Jazz';
@@ -34,7 +33,8 @@ function Apps() {
   };
 
   const handleRegisterSuccess = () => {
-    navigate('/genres');
+    console.log('Navigating to /genres...');
+    navigate('/genres'); // Ensure this path matches your route
   };
 
   return (
@@ -43,6 +43,7 @@ function Apps() {
       <div className="absolute inset-0 z-10 flex flex-col">
         <NavBar />
         <TopBar />
+        
         {!user ? (
           <div>
             {showRegisterPopup ? (
@@ -58,7 +59,10 @@ function Apps() {
             <h1 className="text-lg">Select a genre to start exploring music!</h1>
           </div>
         )}
+        
+        {/* Routes */}
         <Routes>
+       
           <Route path="/genres" element={<Genre />} />
           <Route path="/gospel" element={<Gospel />} />
           <Route path="/hip-hop" element={<HipHop />} />

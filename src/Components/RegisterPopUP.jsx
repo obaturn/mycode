@@ -7,23 +7,23 @@ function RegisterPopUp({ onSwitchToLogin }) {
 
   return (
     <div className="fixed inset-0 bg-gray-500 bg-opacity-40 flex items-center justify-center">
-      <div className="bg-white p-6 rounded-lg text-center">
-        <h2 className="text-2xl font-bold mb-4 text-gray-500">
-          Welcome to OBATURN Spotify Music Listening!
+      <div className="bg-white p-3 sm:p-4 rounded-lg text-center max-w-xs sm:max-w-sm w-full mx-3 shadow-md">
+        <h2 className="text-base sm:text-lg font-bold mb-2 text-gray-600">
+          Welcome to OBATURN Spotify!
         </h2>
-        <p className="mb-4">
-          Sign Up To Get Started With Personalized Music Recommendations And Stay Blessed.
+        <p className="mb-2 text-xs sm:text-sm text-gray-700">
+          Sign up to enjoy personalized music recommendations.
         </p>
-        <p>
-          And Stay Tune To Listen To The Best Music On Heart
+        <p className="mb-3 text-xs sm:text-sm text-gray-700">
+          Stay tuned for the best music on earth.
         </p>
         <button
           onClick={() => dispatch(toggleRegisterPopUp())}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="bg-blue-500 text-white px-3 py-1.5 rounded hover:bg-blue-600 transition text-xs sm:text-sm"
         >
           Sign Up Now
         </button>
-        <p className="mt-4">
+        <p className="mt-3 text-xs text-gray-600">
           Already have an account?{' '}
           <button onClick={onSwitchToLogin} className="text-blue-500 underline">
             Login
@@ -35,4 +35,3 @@ function RegisterPopUp({ onSwitchToLogin }) {
 }
 
 export default RegisterPopUp;
-

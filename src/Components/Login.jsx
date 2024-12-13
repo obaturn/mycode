@@ -18,11 +18,11 @@ function Login({ onLoginSuccess }) {
 
       if (response.status === 200) {
         dispatch(setUser(usernameOrEmail));
-        onLoginSuccess(); 
+        onLoginSuccess();
       }
     } catch (error) {
       if (error.response) {
-        setErrorMessage(error.response.data.error); 
+        setErrorMessage(error.response.data.error);
       } else {
         setErrorMessage('An unknown error occurred. Please try again.');
       }
@@ -30,32 +30,35 @@ function Login({ onLoginSuccess }) {
   };
 
   return (
-    <div className="p-3 bg-black text-white max-w-md mx-auto mt-5 rounded-md">
-      <h2 className="font-bold text-2xl mb-4">Login Details</h2>
-      {errorMessage && <p className="text-green-300 mb-4">{errorMessage}</p>}
-      <input
-        type="text"
-        placeholder="Enter your username or email"
-        value={usernameOrEmail}
-        onChange={(e) => setUsernameOrEmail(e.target.value)}
-        className="w-full p-2 mb-4 rounded bg-white text-black"
-      />
-      <input
-        type="password"
-        placeholder="Enter your password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="w-full p-2 mb-4 rounded bg-white text-black"
-      />
-      <button
-        onClick={handleLogin}
-        className="w-full bg-blue-500 text-white rounded p-2"
-      >
-        Login
-      </button>
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white p-4">
+      <div className="p-6 bg-gray-800 rounded-lg max-w-md w-full shadow-lg space-y-6">
+        <h2 className="text-2xl font-bold text-center">Login</h2>
+        {errorMessage && <p className="text-red-500 text-center">{errorMessage}</p>}
+        <input
+          type="text"
+          placeholder="Username or Email"
+          value={usernameOrEmail}
+          onChange={(e) => setUsernameOrEmail(e.target.value)}
+          className="w-full p-3 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full p-3 rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <button
+          onClick={handleLogin}
+          className="w-full bg-blue-600 hover:bg-blue-500 text-white rounded p-3 transition duration-300"
+        >
+          Login
+        </button>
+
+        
+      </div>
     </div>
   );
 }
 
 export default Login;
-
