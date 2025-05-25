@@ -1,0 +1,30 @@
+.featured-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.animated-product {
+    width: 200px;
+    height: auto;
+    animation: moveLeftRight 3s infinite alternate ease-in-out;
+}
+
+@keyframes moveLeftRight {
+    0% { transform: translateX(-20px); }
+    100% { transform: translateX(20px); }
+}
+
+.order-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    margin-top: 10px;
+    animation: fadeInOut 2s infinite;
+}

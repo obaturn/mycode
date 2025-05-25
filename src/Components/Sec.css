@@ -1,0 +1,74 @@
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Footer Container */
+.footer {
+    background-color: #232f3e;
+    color: white;
+    padding: 0;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    background-color: #37475a;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #485769;
+}
+
+/* Footer Content Layout */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 100px;
+}
+
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.footer-section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Navigation List */
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Navigation Items */
+.nav li {
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.nav li:hover {
+    color: #febd69; /* Amazon-like yellow */
+}

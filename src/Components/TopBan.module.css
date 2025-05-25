@@ -1,0 +1,232 @@
+
+.topNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: orange;
+    padding: 10px;
+    width: 100%;
+    height: 60px;
+}
+
+.leftSection {
+    flex: 1;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.centerSection {
+    flex: 2;
+    text-align: center;
+}
+
+.bannerImage {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.rightSection {
+    flex: 1;
+    text-align: right;
+    padding-right: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.bannerText {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.secondNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 15px;
+    width: 98%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    height: 45px;
+    flex-wrap: wrap;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    flex: 1;
+    min-width: 150px;
+}
+.menuIcon {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: block !important;
+    color: black !important;
+}
+
+.logoText {
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    color: orange;
+}
+
+.starIcon {
+    color: orange;
+    font-size: 16px;
+}
+
+
+.searchSection {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    max-width: 400px;
+}
+.searchBox {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    height: 38px;
+    max-width: 80%;
+}
+.searchIcon {
+    margin-left: 10px;
+    color: #1e0505;
+}
+
+.searchBox input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+}
+.searchButton {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+}
+
+
+.rightNavSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    justify-content: flex-end;
+    min-width: 200px;
+}
+.navButton {
+    display: flex;
+    align-items: center;
+    background: #f2f2f2;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.navButton svg {
+    margin-right: 5px;
+}
+
+.cartButton {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.aboutContainer {
+
+    text-align: center;
+    padding: 40px 20px;
+
+}
+.aboutUsTittle{
+    font-size: 28px;
+    color: orange;
+    font-weight: bold;
+}
+.aboutUsNav{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: orange;
+    font-weight: bold;
+    border-bottom: 2px solid orange;
+    padding-bottom: 5px;
+
+}
+.aboutUsNav span {
+    cursor: pointer;
+}
+
+.aboutSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-bottom: 20px;
+
+
+}
+.aboutImage {
+    width: 45%; /* Reduce image size */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    position: relative;
+}
+.overlayText {
+    background: rgba(255, 165, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    width: 45%;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.overlayText h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.overlayText p {
+    font-size: 14px;
+}

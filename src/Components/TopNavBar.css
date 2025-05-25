@@ -1,0 +1,161 @@
+/* Navbar container */
+body{
+    background-color: #d0dcd0;
+    width: 100%;
+}
+.navbarClass {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #131921;
+    padding: 10px 20px;
+    color: white;
+    width: 98%;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+/* Amazon Logo & Delivery Text */
+.Pics {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.amazon-logo {
+    width: 50px;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.1;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    width: 40%;
+    max-width: 400px;
+}
+
+.search {
+    flex: 1;
+    padding: 4px;
+    border: none;
+    outline: none;
+}
+
+.search-button {
+    background-color: #febd69;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Sign Up Text */
+.Sign {
+    font-family: Algerian, serif;
+    color: green;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.Sign:hover {
+    color: #febd69;
+}
+
+/* Menu Container */
+.menu-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* Reduce spacing */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: flex-end; /* Align items to the right */
+}
+
+/* E-STORE Text */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin: 0 10px;
+}
+
+/* Icons */
+.menu-icon,
+.cart-icon {
+    font-size: 24px;
+    color: white; /* Ensure visibility */
+    cursor: pointer;
+    display: block; /* Ensure it is visible */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Upload Button */
+.upload-button {
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 14px;
+    width: 140px;  /* Reduce width */
+    height: 30px;
+    color: white;
+    background-color: #febd69;
+    border: none;
+    transition: background 0.3s;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.upload-button:hover {
+    background-color: #007bff;
+}
+
+/* RESPONSIVENESS FIX FOR MOBILE */
+@media screen and (max-width: 768px) {
+    .navbarClass {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .search-container {
+        width: 90%;
+        margin-top: 10px;
+    }
+
+    .menu-container {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .Sign {
+        font-size: 14px;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .menu-icon,
+    .cart-icon {
+        font-size: 22px;
+        margin: 5px;
+    }
+
+    .upload-button {
+        font-size: 14px;
+        width: 120px;
+        height: 30px;
+    }
+}

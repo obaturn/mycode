@@ -1,0 +1,67 @@
+.upload-product-container {
+    position: relative; /* Ensures absolute positioning works inside */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #d0dcd0;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.upload-product-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.upload-product-container button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-product-container button:hover {
+    background-color: #0056b3;
+}
+
+.upload-product-image {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.text {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+}
+
+.upload-title {
+    color: red;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.close-btn:hover {
+    background: darkred;
+}

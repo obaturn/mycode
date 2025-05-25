@@ -1,0 +1,73 @@
+.KingsContainer {
+    text-align: center;
+    padding: 40px;
+    background: #0a283e;
+}
+
+.headings {
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 20px;  /* Reduced from 30px */
+    height: 20px; /* Reduced from 30px */
+}
+
+.title {
+    color: orange;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: orange;
+    font-size: 16px;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted grid size */
+    gap: 15px; /* Reduced space between cards */
+    justify-items: center;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    background-color: orange;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 12px;
+    font-weight: bold;
+}

@@ -1,0 +1,13 @@
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.uploaded-image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
